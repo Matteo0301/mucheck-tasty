@@ -1,5 +1,5 @@
 dist-newstyle
 .mutants
 *.tix
-*.mix
 .ghc.environment.*
+.hpc
