@@ -22,7 +22,7 @@ library
     exposed-modules:  Test.MuCheck.TestAdapter.TastyAdapter
     -- other-modules:
     -- other-extensions:
-    build-depends:    base ^>=4.17.2.0,
+    build-depends:    base,
                         tasty,
                         MuCheck
     hs-source-dirs:   src
@@ -38,7 +38,7 @@ test-suite mucheck-tasty-test
     main-is:          Main.hs
     ghc-options:      -fhpc
     build-depends:
-        base ^>=4.17.2.0,
+        base,
         mucheck-tasty,
         tasty,
         tasty-hunit
@@ -53,7 +53,7 @@ executable example
     hs-source-dirs:   src
     main-is:          Main.hs
     build-depends:
-        base ^>=4.17.2.0,
+        base,
         mucheck-tasty,
         tasty,
         MuCheck,
