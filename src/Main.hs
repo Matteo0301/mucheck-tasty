@@ -1,13 +1,10 @@
 module Main where
 
-import Test.MuCheck
-import Test.MuCheck.TestAdapter
-import Test.MuCheck.TestAdapter.TastyAdapter
-
-runMuCheck :: String -> IO ()
-runMuCheck file = do
-    (msum, _tsum) <- mucheck (toRun file :: TastyRun) []
-    print msum
+import Test.Tasty
+import Test.Tasty.MuCheck
+import Test.Tasty.MuCheck (testFile)
 
 main :: IO ()
-main = runMuCheck "test/TastyTests.hs"
+main = defaultMain tests
+
+tests = testGroup "Tests" [testFile "test/TastyTests.hs" "test/TastyTests.hs" (0.5)]
